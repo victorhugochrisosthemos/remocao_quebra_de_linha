@@ -165,19 +165,6 @@ html_code = """
                 padding-right: 20px;
             }
         }
-        
-        .copy-btn {
-            border: none;
-            background: transparent;
-            font-size: 18px;
-            cursor: pointer;
-            color: #5f6368;
-            margin-left: auto;
-        }
-        
-        .copy-btn:hover {
-            color: #202124;
-        }
 
     </style>
 </head>
@@ -187,7 +174,6 @@ html_code = """
             <section class="panel left">
                 <div class="title-row">
                     <span>Texto original</span>
-                    <button id="copyBtn" class="copy-btn" title="Copiar texto">📋</button>
                 </div>
 
                 <textarea
@@ -238,20 +224,6 @@ html_code = """
             input.focus();
         });
         
-        const copyBtn = document.getElementById("copyBtn");
-        
-        copyBtn.addEventListener("click", async function () {
-            const texto = output.textContent;
-        
-            if (!texto || texto.includes("Cole um texto")) return;
-        
-            try {
-                await navigator.clipboard.writeText(texto);
-        
-                copyBtn.textContent = "✅";
-                setTimeout(() => {
-                    copyBtn.textContent = "📋";
-                }, 1200);
 
     </script>
 </body>
